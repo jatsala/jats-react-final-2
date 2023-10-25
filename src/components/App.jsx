@@ -18,8 +18,13 @@ const App = () => {
      * Se crea una variable de estado donde se almacena el valor de la configuración en localStorage
      */
     useEffect(() => {
-        const config = JSON.parse(localStorage.getItem('config'));
-        setDark(config.theme);
+        // try {
+        //     const config = JSON.parse(localStorage.getItem('config'));
+        //     setDark(config.theme);
+        // } catch (e) {
+        //     setDark(false)
+        // }
+        setDark(false)
     }, []);
 
     /**
