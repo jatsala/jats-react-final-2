@@ -16,7 +16,7 @@ const TaskList = ({ showSettings, setShowSettings }) => {
         getTasks()
             .then((tasks) => setTasklist([...tasks]))
             .catch(err => console.error(err))
-    });
+    }, []);
 
     /**
      * Añade una nueva tarea a la lista de Tareas.
@@ -97,7 +97,7 @@ const TaskList = ({ showSettings, setShowSettings }) => {
             <input className='shadow py-1 px-2 rounded-lg outline-none transition-all duration-300 focus:ring-2 mr-2 dark:bg-slate-700'
                 onKeyDown={insertNewItemOnEnterKey}
                 value={newTask} onChange={editNewItem} placeholder="New Task" type="text" />
-            <button className='btn' onClick={addNewTask}>Create Task</button>
+            <button className='btn btn-add-task' onClick={addNewTask}>Create Task</button>
         </div>
         {isTasksEmpty()
             ? (<p>Task List is Empty</p>)

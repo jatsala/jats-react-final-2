@@ -10,6 +10,7 @@ export const getTasks = async () => {
     const tasks = querySnapshot.docs.map(doc => {
         return { ...doc.data(), id: doc.id };
     })
+    console.log(tasks)
     return (tasks);
 }
 
